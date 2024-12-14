@@ -1,4 +1,6 @@
 import sympy as sp
+from IPython.display import display
+from IPython.display import Math
 
 data = {
     ("Ix", "Ix"): "0", ("Ix", "Iy"): "-Iz", ("Ix", "Iz"): "Iy", ("Ix", "Sx"): "0", ("Ix", "Sy"): "0", ("Ix", "Sz"): "0", ("Ix", "2IzSz"): "2IySz",
@@ -78,10 +80,6 @@ def pulse(magnet_charge_dict, transform, time):
                     ret[transformed_state].append(f"{coeff}*{sin_value}")
     ret = {key: value for key, value in ret.items() if value}
     return ret
-
-from IPython.display import display
-from IPython.display import Math
-
 
 def display_dict(magnet_charge_dict):
     ret = []
